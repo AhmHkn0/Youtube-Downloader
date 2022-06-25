@@ -7,11 +7,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>$(AhmetHakan)</Authors>
-    <PackageIcon>downloadericon.ico</PackageIcon>
+    <PackageIcon>downloader-icon-26.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Desktop\downloadericon.ico">
+    <None Include="..\..\..\..\Desktop\downloader-icon-26.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

@@ -1,0 +1,8 @@
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.csproj.AssemblyReference.cache
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.Form1.resources
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.Properties.Resources.resources
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.csproj.GenerateResource.cache
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.AssemblyInfoInputs.cache
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.AssemblyInfo.cs
+C:\Users\VartenisthPC\source\repos\youtubedownloader\youtubedownloader\obj\Debug\net5.0-windows\youtubedownloader.csproj.CoreCompileInputs.cache

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.buton_indir = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buton_indirilenklasorac = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.video_adi_block = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@
             this.video_adi = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buton_videokontrol = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,15 +53,15 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // buton_indir
             // 
-            this.button1.Location = new System.Drawing.Point(226, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "İndir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buton_indir.Location = new System.Drawing.Point(226, 139);
+            this.buton_indir.Name = "buton_indir";
+            this.buton_indir.Size = new System.Drawing.Size(105, 34);
+            this.buton_indir.TabIndex = 0;
+            this.buton_indir.Text = "İndir";
+            this.buton_indir.UseVisualStyleBackColor = true;
+            this.buton_indir.Click += new System.EventHandler(this.buton_indir_Click);
             // 
             // textBox1
             // 
@@ -105,15 +105,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "İndirmek istediğiniz videonun linkini buraya yapıştırın.";
             // 
-            // button2
+            // buton_indirilenklasorac
             // 
-            this.button2.Location = new System.Drawing.Point(335, 193);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "İndirilenler klasörünü aç";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buton_indirilenklasorac.Location = new System.Drawing.Point(335, 193);
+            this.buton_indirilenklasorac.Name = "buton_indirilenklasorac";
+            this.buton_indirilenklasorac.Size = new System.Drawing.Size(155, 23);
+            this.buton_indirilenklasorac.TabIndex = 5;
+            this.buton_indirilenklasorac.Text = "İndirilenler klasörünü aç";
+            this.buton_indirilenklasorac.UseVisualStyleBackColor = true;
+            this.buton_indirilenklasorac.Click += new System.EventHandler(this.buton_indirilenklasorac_Click);
             // 
             // progressBar1
             // 
@@ -189,15 +189,15 @@
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button3
+            // buton_videokontrol
             // 
-            this.button3.Location = new System.Drawing.Point(604, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 38);
-            this.button3.TabIndex = 10;
-            this.button3.Text = ">";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buton_videokontrol.Location = new System.Drawing.Point(604, 51);
+            this.buton_videokontrol.Name = "buton_videokontrol";
+            this.buton_videokontrol.Size = new System.Drawing.Size(43, 38);
+            this.buton_videokontrol.TabIndex = 10;
+            this.buton_videokontrol.Text = ">";
+            this.buton_videokontrol.UseVisualStyleBackColor = true;
+            this.buton_videokontrol.Click += new System.EventHandler(this.buton_videokontrol_Click_1);
             // 
             // panel2
             // 
@@ -205,7 +205,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.listBox1);
             this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.buton_indir);
             this.panel2.Location = new System.Drawing.Point(159, 323);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(586, 192);
@@ -239,8 +239,8 @@
             // 
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.progressBar2);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.buton_indirilenklasorac);
+            this.panel3.Controls.Add(this.buton_videokontrol);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.radioButton2);
@@ -273,12 +273,12 @@
 
         #endregion
 
-        private Button button1;
+        private Button buton_indir;
         private TextBox textBox1;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private Label label1;
-        private Button button2;
+        private Button buton_indirilenklasorac;
         private ProgressBar progressBar1;
         private Label video_adi_block;
         private Panel panel1;
@@ -286,7 +286,7 @@
         private Label video_adi;
         private Label label3;
         private ListBox listBox1;
-        private Button button3;
+        private Button buton_videokontrol;
         private Panel panel2;
         private Label label4;
         private ProgressBar progressBar2;

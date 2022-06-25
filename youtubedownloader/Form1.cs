@@ -26,7 +26,8 @@ namespace youtubedownloader
 
             progressBar2.Visible = false;
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void buton_videokontrol_Click_1(object sender, EventArgs e)
         {
             bilgilerisifirla();
             listBox1.Items.Clear();
@@ -35,12 +36,11 @@ namespace youtubedownloader
                 sesindir(link);
             if (radioButton2.Checked == true)
                 videocek(link);
-
         }
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buton_indir_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
@@ -152,8 +152,7 @@ namespace youtubedownloader
             }
             catch (Exception ex)
             {
-                // MessageBox.Show("Yazdýðýnýz link hatalý ya da video indirilemiyor.", "Hata");
-                MessageBox.Show(ex.Message, "Hata");
+                 MessageBox.Show("Yazdýðýnýz link hatalý ya da video indirilemiyor.", "Hata");
             }
 
             
@@ -209,7 +208,7 @@ namespace youtubedownloader
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\YoutubeDownloader\\";
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void buton_indirilenklasorac_Click(object sender, EventArgs e)
         {
             indirmekonumuac();
         }
@@ -250,7 +249,7 @@ namespace youtubedownloader
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                button3.PerformClick();
+                buton_videokontrol.PerformClick();
             }
         }
 
@@ -268,5 +267,7 @@ namespace youtubedownloader
             }
             
         }
+
+        
     }
 }
