@@ -12,8 +12,11 @@ namespace youtubedownloader
 
         VideoLibrary.YouTubeVideo video;
 
+        bool videobulundu;
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            videobulundu = false;
             konum();
             radioButton1.Checked = true;
             video_adi.Text = "";
@@ -87,7 +90,7 @@ namespace youtubedownloader
                 }
 
                 listBox1.Sorted = true;
-
+                videobulundu = true;
                 panel1.Visible = true;
                 panel2.Visible = true;
 
@@ -133,12 +136,12 @@ namespace youtubedownloader
                 bilgileriyazdir(video.FullName.ToString(), "128Kbps");
                 await Task.Run(() =>
                 {
-                    File.WriteAllBytes(indirmekonumu() + video.FullName, video.GetBytes());
+                    File.WriteAllBytes(myvideoskonum() + video.FullName, video.GetBytes());
                 });
 
                 progressBar2.Value = 80;
 
-                Mp4ToMp3(indirmekonumu() + "\\" + video.FullName);
+                Mp4ToMp3(myvideoskonum() + "\\" + video.FullName ,indirmekonumu() + "\\" + video.FullName);
 
                 progressBar2.Value = 100;
                 MessageBox.Show("Ýndirme tamamlandý.", "Video indirildi");
@@ -147,9 +150,10 @@ namespace youtubedownloader
                 progressBar2.Visible = false;
                 
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Yazdýðýnýz link hatalý ya da video indirilemiyor.", "Hata");
+                // MessageBox.Show("Yazdýðýnýz link hatalý ya da video indirilemiyor.", "Hata");
+                MessageBox.Show(ex.Message, "Hata");
             }
 
             
@@ -158,10 +162,10 @@ namespace youtubedownloader
 
         
 
-        private void Mp4ToMp3(String path)
+        private void Mp4ToMp3(String from, String to)
         {
-            var inputFile = new MediaToolkit.Model.MediaFile { Filename = path };
-            var outputFile = new MediaToolkit.Model.MediaFile { Filename = $"{path}.mp3" };
+            var inputFile = new MediaToolkit.Model.MediaFile { Filename = from };
+            var outputFile = new MediaToolkit.Model.MediaFile { Filename = $"{to}.mp3" };
 
             using (var engine = new MediaToolkit.Engine())
             {
@@ -169,7 +173,7 @@ namespace youtubedownloader
 
                 engine.Convert(inputFile, outputFile);
 
-                File.Delete(Path.Combine(path));
+                File.Delete(Path.Combine(from));
             }
         }
 
@@ -196,6 +200,11 @@ namespace youtubedownloader
             return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\YoutubeDownloader";
         }
 
+        private String myvideoskonum()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\";
+        }
+
         private String indirmekonumu()
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\YoutubeDownloader\\";
@@ -213,7 +222,12 @@ namespace youtubedownloader
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked == false)
+            {
                 radioButton2.Checked = true;
+                if (videobulundu == true)
+                    panel2.Visible = true;
+            }
+                
             if (radioButton1.Checked == true)
             {
                 radioButton2.Checked = false;
@@ -240,6 +254,19 @@ namespace youtubedownloader
             }
         }
 
-
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItems != null) 
+            {
+                label2.Text = "";
+                string item = listBox1.SelectedItem.ToString();
+                if (item != "144" && item != "240" && item != "360" && item != "480" && item != "720" && item != "1080")
+                {
+                    label2.Text = "Videoyu seçtiðiniz çözünürlükte\nindirirseniz ses olmayacaktýr.";
+                    label2.ForeColor = Color.Red;
+                }
+            }
+            
+        }
     }
 }

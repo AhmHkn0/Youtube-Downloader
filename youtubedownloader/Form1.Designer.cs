@@ -44,6 +44,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -140,9 +141,9 @@
             this.panel1.Controls.Add(this.video_adi);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.video_adi_block);
-            this.panel1.Location = new System.Drawing.Point(206, 12);
+            this.panel1.Location = new System.Drawing.Point(109, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 70);
+            this.panel1.Size = new System.Drawing.Size(689, 70);
             this.panel1.TabIndex = 8;
             // 
             // video_cozunurluk
@@ -186,6 +187,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(210, 64);
             this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -199,6 +201,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.listBox1);
             this.panel2.Controls.Add(this.progressBar1);
@@ -207,6 +210,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(586, 192);
             this.panel2.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(395, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 15);
+            this.label2.TabIndex = 11;
             // 
             // label4
             // 
@@ -280,5 +291,6 @@
         private Label label4;
         private ProgressBar progressBar2;
         private Panel panel3;
+        private Label label2;
     }
 }
